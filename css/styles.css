@@ -7,6 +7,8 @@
 /* цвет части логотпа внизу #F4F4FD */
 /* цвет первого заголовка #FFFFFF */
 /* цвет блока текста в подвале #E7E9FC */
+/* колір фона хіро background: rgba(46, 47, 66, 0.7); */
+
 /*
 html {
   box-sizing: border-box;
@@ -27,7 +29,10 @@ html {
   --white-color: #ffffff;
   --not-white-color: #f4f4fd;
   --additional-not-white-color: #e7e9fc;
-  --hero-footer-bgc: #2e2f42;
+  --footer-bgc: #2e2f42;
+  --hero-bgc: rgba(46, 47, 66, 0.7);
+  --customers-color: #8e8f99;
+  --not-green-color: #31d0aa;
 }
 
 body {
@@ -67,7 +72,8 @@ body {
   margin: 0 auto;
   padding-left: 15px;
   padding-right: 15px;
-  /* outline: 1px solid #434455; - temporary container border */
+  /* outline: 1px solid #434455; */
+  /* - temporary container border */
 }
 
 /* !!Header!! */
@@ -147,8 +153,18 @@ body {
 .hero {
   padding-top: 188px;
   padding-bottom: 188px;
+  height: 600px;
+  max-width: 1440px;
+  margin-left: auto;
+  margin-right: auto;
 
-  background-color: var(--hero-footer-bgc);
+  background-image: linear-gradient(var(--hero-bgc), var(--hero-bgc)),
+    url(../images/hero-bg-image.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+
+  background-color: var(--hero-bgc);
 
   text-align: center;
 }
@@ -211,22 +227,28 @@ body {
 .section.features {
   background-color: var(--white-color);
 }
-/* Невидимий заголовок - Сховати по-людські! */
-.section-title.features {
-  margin-bottom: 40px;
-  display: none;
+
+.section-subtitle.features {
+  margin-top: 8px;
 }
+
 .list.features {
   display: flex;
   justify-content: space-between;
   gap: 24px;
 }
-.list.features .item {
+.features-item {
   flex-basis: calc((100%-72px) / 4);
 }
-/* .list.features .item:not(:last-child) {
-  margin-right: 24px;
-} */
+.features-icon-box {
+  border-radius: 4px;
+  padding-top: 24px;
+  padding-bottom: 24px;
+
+  background-color: var(--not-white-color);
+
+  text-align: center;
+}
 
 /* We are We Doing */
 
@@ -269,11 +291,69 @@ body {
   box-shadow: 0px 2px 1px 0px rgba(46, 47, 66, 0.08),
     0px 1px 1px 0px rgba(46, 47, 66, 0.16),
     0px 1px 6px 0px rgba(46, 47, 66, 0.08);
+  border-radius: 0px 0px 4px 4px;
 }
 .card-content {
   padding: 32px 16px;
 
   text-align: center;
+}
+.team .social-networks {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 8px;
+}
+.social-networks-item {
+  display: block;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  padding: 12px;
+
+  background-color: var(--accent-color-add);
+}
+.social-networks-item:hover,
+.social-networks-item:focus {
+  background-color: var(--accent-color);
+}
+.social-networks-icon {
+  fill: var(--not-white-color);
+}
+
+/* Customers section */
+.section.customers {
+  padding-top: 130px;
+
+  background-color: var(--white-color);
+}
+.section-title.customers {
+  margin-bottom: 72px;
+}
+.list.customers {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  text-align: center;
+}
+
+.item-customers {
+  flex-basis: calc((100%-120px) / 6);
+  border: 1px solid var(--customers-color);
+  border-radius: 4px;
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
+.item-customers:hover,
+.item-customers:focus {
+  border-color: var(--accent-color);
+}
+.customers-icon {
+  fill: var(--customers-color);
+}
+
+.customers-icon:hover,
+.customers-icon:focus {
+  fill: var(--accent-color);
 }
 
 /* !!Footer!! */
@@ -282,9 +362,10 @@ body {
   padding-bottom: 100px;
   padding-top: 100px;
 
-  background-color: var(--hero-footer-bgc);
+  background-color: var(--footer-bgc);
 }
 .logo-foot {
+  display: block;
   color: var(--not-white-color);
 
   font-family: "Raleway", sans-serif;
@@ -294,18 +375,52 @@ body {
   letter-spacing: 0.03em;
   text-transform: uppercase;
   text-decoration: none;
+  margin-bottom: 16px;
 }
 .logo-foot-part {
   color: var(--accent-color-add);
 }
 .footer-text {
   margin-bottom: 0;
+  margin-top: 0;
   max-width: 264px;
 
   color: var(--additional-not-white-color);
 
   font-size: 16px;
   line-height: 1.5;
+}
+.footer-box {
+  display: flex;
+  align-items: flex-start;
+}
+.footer-box .footer-item:first-child {
+  margin-right: 120px;
+}
+
+.footer .social-networks {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 16px;
+}
+.footer .social-networks-item {
+  display: block;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  padding: 12px;
+
+  background-color: rgba(255, 255, 255, 0.1);
+}
+.footer .social-networks .item:not(:last-child) {
+  margin-right: 16px;
+}
+.footer .social-networks-item:hover,
+.footer .social-networks-item:focus {
+  background-color: var(--not-green-color);
+}
+.footer .social-networks-icon {
+  fill: var(--not-white-color);
 }
 
 /* !!!Portfolio Page!!! */
@@ -316,18 +431,11 @@ body {
 
   background-color: var(--white-color);
 }
-/* Невидимий заголовок - Сховати по-людські! */
-.portfolio-title {
-  margin-top: 0;
-  margin-bottom: 0;
-  display: none;
-}
 
 /* Filter buttons */
 .portfolio .button {
   padding: 12px 24px;
   border: 1px solid var(--additional-not-white-color);
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 
   color: var(--accent-color-add);
   background-color: var(--not-white-color);
@@ -365,13 +473,20 @@ body {
   flex-wrap: wrap;
 }
 .list.galery .item {
-  /* width: calc((100%-48px) / 3); */
   min-width: 360px;
   margin-right: 24px;
   margin-bottom: 48px;
 
+  background-color: var(--white-color);
+  box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08);
+
   display: flex;
   flex-direction: column;
+  cursor: pointer;
+}
+.list.galery .item:hover {
+  box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
+    0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
 }
 .list.galery .item:nth-child(3n) {
   margin-right: 0;
@@ -383,7 +498,7 @@ body {
   padding-top: 32px;
   padding-bottom: 32px;
   padding-left: 16px;
-  border-bottom: 1px solid var(--not-white-color);
-  border-right: 1px solid var(--not-white-color);
-  border-left: 1px solid var(--not-white-color);
+  border-bottom: 0.5px solid var(--not-white-color);
+  border-right: 0.5px solid var(--not-white-color);
+  border-left: 0.5px solid var(--not-white-color);
 }
