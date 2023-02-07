@@ -19,8 +19,6 @@ html {
   box-sizing: inherit;
 } - exist in modern-normalize */
 
-/* Common styles */
-
 :root {
   --main-text-color: #2e2f42;
   --paragraph-text-color: #434455;
@@ -40,8 +38,9 @@ body {
 
   color: var(--main-text-color);
   font-family: "Roboto", sans-serif;
-  letter-spacing: 0.02em;
 }
+
+/* ==================Components styles================== */
 
 .link {
   color: currentColor;
@@ -49,6 +48,7 @@ body {
   font-weight: 500;
   font-size: 16px;
   line-height: 1.5;
+  letter-spacing: 0.02em;
   text-decoration: none;
 }
 .list {
@@ -58,9 +58,8 @@ body {
 }
 .button {
   border-radius: 4px;
-  border: 0px;
+  border: none;
 
-  /* font-family: inherit; - exist in modern-normalize */
   font-weight: 500;
   font-size: 16px;
   line-height: 1.5;
@@ -76,7 +75,7 @@ body {
   /* - temporary container border */
 }
 
-/* !!Header!! */
+/* !!==================Header!!================== */
 
 .page-header {
   background-color: var(--white-color);
@@ -87,21 +86,24 @@ body {
   align-items: center;
 }
 
-/* Logo */
+/* ==================Logo================== */
+
 .logo-head {
   margin-right: 76px;
 
   font-family: "Raleway", sans-serif;
   font-weight: 800;
   font-size: 18px;
-  line-height: 133%;
+  line-height: 1.33;
   letter-spacing: 0.03em;
   text-transform: uppercase;
 }
 .logo-head-part {
   color: var(--accent-color-add);
 }
-/* Site navigation */
+
+/* ==================Site navigation================== */
+
 .main-nav {
   display: flex;
   align-items: center;
@@ -124,7 +126,9 @@ body {
 .main-nav .link.current {
   color: var(--accent-color);
 }
-/* Adress */
+
+/* ==================Adress================== */
+
 .adress {
   display: flex;
   align-items: center;
@@ -140,6 +144,7 @@ body {
   font-style: normal;
   font-size: 16px;
   line-height: 1.5;
+  letter-spacing: 0.02em;
 }
 .adress-list.mail:hover,
 .adress-list.tel:hover,
@@ -148,7 +153,7 @@ body {
   color: var(--accent-color);
 }
 
-/* !!Hero!! */
+/* !!==================Hero!!================== */
 
 .hero {
   padding-top: 188px;
@@ -175,7 +180,8 @@ body {
   color: var(--white-color);
 
   font-size: 56px;
-  line-height: 107%;
+  line-height: 1.07;
+  letter-spacing: 0.02em;
 }
 .hero .button {
   padding: 16px 32px;
@@ -190,7 +196,8 @@ body {
   background-color: var(--accent-color);
 }
 
-/* !!Section!! - common for all sections */
+/* ==================!!Section!! - common for all sections================== */
+
 .section {
   padding-top: 120px;
   padding-bottom: 120px;
@@ -200,7 +207,8 @@ body {
   margin-bottom: 0;
 
   font-size: 36px;
-  line-height: 111%;
+  line-height: 1.11;
+  letter-spacing: 0.02em;
   text-align: center;
   text-transform: capitalize;
 }
@@ -211,6 +219,7 @@ body {
   font-weight: 500;
   font-size: 20px;
   line-height: 1.2;
+  letter-spacing: 0.02em;
 }
 .section-text {
   margin-top: 0;
@@ -220,9 +229,10 @@ body {
 
   font-size: 16px;
   line-height: 1.5;
+  letter-spacing: 0.02em;
 }
 
-/* Features */
+/* ==================Features================== */
 
 .section.features {
   background-color: var(--white-color);
@@ -242,15 +252,15 @@ body {
 }
 .features-icon-box {
   border-radius: 4px;
-  padding-top: 24px;
-  padding-bottom: 24px;
+  height: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   background-color: var(--not-white-color);
-
-  text-align: center;
 }
 
-/* We are We Doing */
+/* ==================We are We Doing================== */
 
 .section.projects {
   padding-top: 0;
@@ -268,7 +278,7 @@ body {
   justify-content: space-between;
 }
 
-/* OurTeam */
+/* ==================OurTeam================== */
 
 .section.team {
   background-color: var(--not-white-color);
@@ -304,11 +314,12 @@ body {
   margin-top: 8px;
 }
 .social-networks-item {
-  display: block;
+  display: flex;
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  padding: 12px;
+  justify-content: center;
+  align-items: center;
 
   background-color: var(--accent-color-add);
 }
@@ -320,7 +331,8 @@ body {
   fill: var(--not-white-color);
 }
 
-/* Customers section */
+/* ==================Customers section================== */
+
 .section.customers {
   padding-top: 130px;
 
@@ -338,10 +350,12 @@ body {
 
 .item-customers {
   flex-basis: calc((100%-120px) / 6);
+  display: flex;
+  height: 88px;
   border: 1px solid var(--customers-color);
   border-radius: 4px;
-  padding-top: 16px;
-  padding-bottom: 16px;
+  justify-content: center;
+  align-items: center;
 }
 .item-customers:hover,
 .item-customers:focus {
@@ -356,7 +370,7 @@ body {
   fill: var(--accent-color);
 }
 
-/* !!Footer!! */
+/* !!==================Footer!!================== */
 
 .footer {
   padding-bottom: 100px;
@@ -371,7 +385,7 @@ body {
   font-family: "Raleway", sans-serif;
   font-weight: 800;
   font-size: 18px;
-  line-height: 117%;
+  line-height: 1.17;
   letter-spacing: 0.03em;
   text-transform: uppercase;
   text-decoration: none;
@@ -389,6 +403,7 @@ body {
 
   font-size: 16px;
   line-height: 1.5;
+  letter-spacing: 0.02em;
 }
 .footer-box {
   display: flex;
@@ -404,11 +419,12 @@ body {
   margin-top: 16px;
 }
 .footer .social-networks-item {
-  display: block;
+  display: flex;
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  padding: 12px;
+  justify-content: center;
+  align-items: center;
 
   background-color: rgba(255, 255, 255, 0.1);
 }
@@ -423,8 +439,8 @@ body {
   fill: var(--not-white-color);
 }
 
-/* !!!Portfolio Page!!! */
-/* !!Portfolio section!! */
+/* !!!==================Portfolio Page==================!!! */
+/* !!==================Portfolio section!!================== */
 
 .section.portfolio {
   padding-top: 96px;
@@ -432,7 +448,8 @@ body {
   background-color: var(--white-color);
 }
 
-/* Filter buttons */
+/* ==================Filter buttons================== */
+
 .portfolio .button {
   padding: 12px 24px;
   border: 1px solid var(--additional-not-white-color);
@@ -461,7 +478,8 @@ body {
   margin-right: 24px;
 }
 
-/* Portfolio Galery */
+/* ==================Portfolio Galery================== */
+
 .list.galery {
   margin-top: 72px;
 }
@@ -484,10 +502,18 @@ body {
   flex-direction: column;
   cursor: pointer;
 }
-.list.galery .item:hover {
+.galery-card {
+  display: block;
+}
+.galery-card:hover,
+.galery-card:focus {
   box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
     0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
 }
+/* .list.galery .item:hover {
+  box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
+    0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
+} */
 .list.galery .item:nth-child(3n) {
   margin-right: 0;
 }
